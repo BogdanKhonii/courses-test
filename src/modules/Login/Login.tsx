@@ -18,8 +18,6 @@ const Login = () => {
   const isPassValid = useMemo(() => validatePassword(password), [password]);
 
   const onLogin = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("Login attempt with:", { email, password });
-
     e.preventDefault();
     if (!isEmailValid || !isPassValid) {
       setShowError(true);

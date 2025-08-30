@@ -1,24 +1,31 @@
 import { simulateRequest } from "@/shared/helpers";
 import { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { useAppDispatch, useAppSelector } from "./redux";
+import { selectUser } from "@/store/user/selector";
+import { clearMyUser, setUser } from "@/store/user/reducer";
 
-export const useAuth = () => {
-  const navigate = useNavigate();
-  const [user, setUser] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+export const useAuth = (initUser?: boolean) => {
+  const dispatch = useAppDispatch();
+  const user = useAppSelector(selectUser);
+  const [isLoading, setIsLoading] = useState(false);
 
   const clearUser = () => {
     localStorage.removeItem("user");
-    setUser(null);
-    navigate("/login", { replace: true });
+    dispatch(clearMyUser());
+    window.history.pushState({}, "", "/login");
+    window.dispatchEvent(new PopStateEvent("popstate"));
   };
 
   const getCurrentUser = useCallback(async () => {
-    setIsLoading(true);
+    const user = localStorage.getItem("user");
+    setIsLoading(!!user);
+
+    if (!user) {
+      return;
+    }
 
     const success = await simulateRequest();
-    const user = localStorage.getItem("user");
 
     if (!success && user) {
       setIsLoading(false);
@@ -27,15 +34,16 @@ export const useAuth = () => {
     }
 
     if (user) {
-      setUser(user);
+      dispatch(setUser({ email: user }));
+      if (window.location.pathname === "/login") {
+        window.history.pushState({}, "", "/");
+        window.dispatchEvent(new PopStateEvent("popstate"));
+      }
     } else {
       clearUser();
     }
-    setIsLoading(false);
-  }, []);
 
-  useEffect(() => {
-    getCurrentUser();
+    setIsLoading(false);
   }, []);
 
   const login = useCallback(
@@ -43,13 +51,14 @@ export const useAuth = () => {
       const success = await simulateRequest();
       if (success) {
         localStorage.setItem("user", userData.email);
-        setUser(userData.email);
-        navigate("/", { replace: true });
+        dispatch(setUser({ email: userData.email }));
+        window.history.pushState({}, "", "/");
+        window.dispatchEvent(new PopStateEvent("popstate"));
       } else {
         toast.error("Something went wrong. Please try again.");
       }
     },
-    [navigate]
+    []
   );
 
   const logout = useCallback(async () => {
@@ -59,7 +68,13 @@ export const useAuth = () => {
     } else {
       toast.error("Something went wrong. Please try again.");
     }
-  }, [navigate]);
+  }, []);
+
+  useEffect(() => {
+    if (!user && initUser) {
+      getCurrentUser();
+    }
+  }, []);
 
   return {
     user,

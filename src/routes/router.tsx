@@ -1,6 +1,6 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
-import { LOGIN_ROUTE, COURSES_ROUTE } from "@/shared/constants/routes";
-import { LoginPage, CoursesPage, RootPage } from "@/pages";
+import { LOGIN_ROUTE } from "@/shared/constants/routes";
+import { LoginPage, RootPage } from "@/pages";
 
 import type { RouteObject } from "react-router-dom";
 import type { ReactNode } from "react";
