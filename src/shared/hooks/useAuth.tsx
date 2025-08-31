@@ -1,7 +1,10 @@
-import { simulateRequest } from "@/shared/helpers";
 import { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+
 import { useAppDispatch, useAppSelector } from "./redux";
+import { simulateRequest } from "@/shared/helpers";
+
 import { selectUser } from "@/store/user/selector";
 import { clearMyUser, setUser } from "@/store/user/reducer";
 import { clearCourses } from "@/store/course/reducer";
@@ -9,14 +12,14 @@ import { clearCourses } from "@/store/course/reducer";
 export const useAuth = (initUser?: boolean) => {
   const dispatch = useAppDispatch();
   const user = useAppSelector(selectUser);
-  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(!!initUser);
 
   const clearUser = () => {
     localStorage.removeItem("user");
     dispatch(clearMyUser());
     dispatch(clearCourses());
-    window.history.pushState({}, "", "/login");
-    window.dispatchEvent(new PopStateEvent("popstate"));
+    navigate("/login");
   };
 
   const getCurrentUser = useCallback(async () => {
@@ -38,8 +41,7 @@ export const useAuth = (initUser?: boolean) => {
     if (user) {
       dispatch(setUser({ email: user }));
       if (window.location.pathname === "/login") {
-        window.history.pushState({}, "", "/");
-        window.dispatchEvent(new PopStateEvent("popstate"));
+        navigate("/");
       }
     } else {
       clearUser();
@@ -50,26 +52,29 @@ export const useAuth = (initUser?: boolean) => {
 
   const login = useCallback(
     async (userData: { email: string; password: string }) => {
+      setIsLoading(true);
       const success = await simulateRequest();
       if (success) {
         localStorage.setItem("user", userData.email);
         dispatch(setUser({ email: userData.email }));
-        window.history.pushState({}, "", "/");
-        window.dispatchEvent(new PopStateEvent("popstate"));
+        navigate("/");
       } else {
         toast.error("Something went wrong. Please try again.");
       }
+      setIsLoading(false);
     },
     []
   );
 
   const logout = useCallback(async () => {
+    setIsLoading(true);
     const success = await simulateRequest();
     if (success) {
       clearUser();
     } else {
       toast.error("Something went wrong. Please try again.");
     }
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {

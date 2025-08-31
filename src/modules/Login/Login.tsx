@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-import { useAuth } from "@/hooks";
+import { useAuth } from "@/shared/hooks";
 import { validateEmail, validatePassword } from "@/shared/helpers";
 
 import { Button } from "@/components/ui/button";
@@ -9,11 +9,10 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Login = () => {
-  const { login } = useAuth();
+  const { login, isLoading } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
   const [showError, setShowError] = useState(false);
 
   const isEmailValid = useMemo(() => validateEmail(email), [email]);
@@ -25,9 +24,7 @@ const Login = () => {
       setShowError(true);
       return;
     }
-    setLoading(true);
     await login({ email, password });
-    setLoading(false);
   };
 
   useEffect(() => {
@@ -35,7 +32,7 @@ const Login = () => {
   }, [email, password]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50">
+    <div className="flex items-center justify-center min-h-screen bg-gray-50 mx-4">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-2xl text-center">Login</CardTitle>
@@ -73,10 +70,10 @@ const Login = () => {
             <Button
               className="w-full relative mt-4"
               onClick={onLogin}
-              disabled={loading}
-              loading={loading}
+              disabled={isLoading}
+              loading={isLoading}
             >
-              {loading ? "Loading..." : "Sign In"}
+              {isLoading ? "Loading..." : "Sign In"}
             </Button>
           </form>
         </CardContent>

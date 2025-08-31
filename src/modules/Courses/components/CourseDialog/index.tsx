@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { selectCourseById } from "@/store/course/selector";
 import { updateCourseById } from "@/store/course/reducer";
 
-import { useAppDispatch, useAppSelector } from "@/hooks";
+import { useAppDispatch, useAppSelector } from "@/shared/hooks";
 
 import {
   Dialog,

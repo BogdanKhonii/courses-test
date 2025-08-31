@@ -1,5 +1,4 @@
 import { Header } from "@/modules/Common";
-import { CourseList } from "@/modules/Courses";
 import { Outlet } from "react-router-dom";
 
 const Root = () => {
@@ -7,10 +6,8 @@ const Root = () => {
     <div className="min-h-screen bg-gray-100 ">
       <Header />
       <main className="p-8">
-        <CourseList />
+        <Outlet />
       </main>
-
-      <Outlet />
     </div>
   );
 };

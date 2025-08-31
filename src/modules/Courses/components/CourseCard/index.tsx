@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 
-import { useAppDispatch, useAppSelector } from "@/hooks";
+import { useAppDispatch, useAppSelector } from "@/shared/hooks";
 import { simulateRequest } from "@/shared/helpers";
 
 import { selectCourseById } from "@/store/course/selector";

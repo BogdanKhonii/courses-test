@@ -1,18 +1,9 @@
-import { useState } from "react";
-
-import { useAuth } from "@/hooks";
+import { useAuth } from "@/shared/hooks";
 
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
-  const [loading, setLoading] = useState(false);
-  const { user, logout } = useAuth();
-
-  const onLogout = async () => {
-    setLoading(true);
-    await logout();
-    setLoading(false);
-  };
+  const { user, logout, isLoading } = useAuth();
 
   return (
     <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
@@ -20,8 +11,8 @@ const Header = () => {
       <Button
         variant="outline"
         size="default"
-        onClick={onLogout}
-        disabled={loading}
+        onClick={logout}
+        disabled={isLoading}
       >
         Logout
       </Button>

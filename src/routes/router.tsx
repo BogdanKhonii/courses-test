@@ -1,26 +1,29 @@
-import { Navigate, createHashRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
+import { CoursesPage, LoginPage, RootPage } from "@/pages";
+import { ProtectedRoute } from "./";
+
 import { LOGIN_ROUTE } from "@/shared/constants/routes";
-import { LoginPage, RootPage } from "@/pages";
+import { useAuth } from "@/shared/hooks";
 
-import type { RouteObject } from "react-router-dom";
-import type { ReactNode } from "react";
+const Router = () => {
+  const { user, isLoading } = useAuth(true);
+  return (
+    <Routes>
+      <Route path="/" element={<RootPage />}>
+        <Route
+          index
+          element={
+            <ProtectedRoute user={user} isLoading={isLoading}>
+              <CoursesPage />
+            </ProtectedRoute>
+          }
+        />
+      </Route>
 
-type Router = ReturnType<typeof createHashRouter>;
+      <Route path={LOGIN_ROUTE} element={<LoginPage />} />
+    </Routes>
+  );
+};
 
-const privateRoute = (
-  path: string,
-  element: ReactNode,
-  isLoggedIn: boolean
-): RouteObject => ({
-  path,
-  element: isLoggedIn ? element : <Navigate to={LOGIN_ROUTE} replace />,
-});
-
-export const router = (isLoggedIn: boolean): Router =>
-  createHashRouter([
-    privateRoute("/", <RootPage />, isLoggedIn),
-    {
-      path: "/login",
-      element: <LoginPage />,
-    },
-  ]);
+export default Router;
