@@ -1,10 +1,12 @@
-export const validateEmail = (email: string): boolean => {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-};
+import * as yup from "yup";
 
-export const validatePassword = (password: string): boolean => {
-  const regex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{6,}$/;
-  return regex.test(password);
-};
+export const loginSchema = yup.object({
+  email: yup.string().email().required(),
+  password: yup
+    .string()
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{6,}$/,
+      "Password must be at least 6 characters, include uppercase, lowercase, and a special character"
+    )
+    .required(),
+});
