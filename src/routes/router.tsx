@@ -1,11 +1,11 @@
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import { Navigate, createHashRouter } from "react-router-dom";
 import { LOGIN_ROUTE } from "@/shared/constants/routes";
 import { LoginPage, RootPage } from "@/pages";
 
 import type { RouteObject } from "react-router-dom";
 import type { ReactNode } from "react";
 
-type Router = ReturnType<typeof createBrowserRouter>;
+type Router = ReturnType<typeof createHashRouter>;
 
 const privateRoute = (
   path: string,
@@ -17,7 +17,7 @@ const privateRoute = (
 });
 
 export const router = (isLoggedIn: boolean): Router =>
-  createBrowserRouter([
+  createHashRouter([
     privateRoute("/", <RootPage />, isLoggedIn),
     {
       path: "/login",
