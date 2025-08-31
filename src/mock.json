@@ -1,0 +1,163 @@
+[
+  {
+    "id": "1",
+    "title": "Soft Plastic Chair",
+    "description": "Vir arbor aegrus vicissitudo...",
+    "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "price": "234.39",
+    "previewUrl": "https://picsum.photos/seed/1gxYl/2845/802?grayscale&blur=7"
+  },
+  {
+    "id": "2",
+    "title": "Soft Cotton Chips",
+    "description": "Adsuesco bonus desidero cinis asperiores...",
+    "videoUrl": "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
+    "price": "681.79",
+    "previewUrl": "https://picsum.photos/seed/mQMmPB9/2740/2301?blur=1"
+  },
+  {
+    "id": "3",
+    "title": "Handmade Cotton Chicken",
+    "description": "Vindico accedo complectus uredo amplitudo...",
+    "videoUrl": "https://samplelib.com/lib/preview/mp4/sample-10s.mp4",
+    "price": "323.35",
+    "previewUrl": "https://picsum.photos/seed/OnhWD/2437/2973"
+  },
+  {
+    "id": "4",
+    "title": "Recycled Bamboo Bike",
+    "description": "Tandem tepidus dens voluntarius arma demitto...",
+    "videoUrl": "https://samplelib.com/lib/preview/mp4/sample-15s.mp4",
+    "price": "224.55",
+    "previewUrl": "https://picsum.photos/seed/NqAVIWZTS/1076/24?grayscale&blur=4"
+  },
+  {
+    "id": "5",
+    "title": "Generic Bronze Chicken",
+    "description": "Acies officia ut totidem caute. Sulum utor explicabo officia neque...",
+    "videoUrl": "https://samplelib.com/lib/preview/mp4/sample-20s.mp4",
+    "price": "676.20",
+    "previewUrl": "https://picsum.photos/seed/avCCxJ2qM/2548/2338?blur=2"
+  },
+  {
+    "id": "6",
+    "title": "Intelligent Plastic Shirt",
+    "description": "Aurum bellum degusto clibanus sum vinum incidunt audentia...",
+    "videoUrl": "https://samplelib.com/lib/preview/mp4/sample-30s.mp4",
+    "price": "556.88",
+    "previewUrl": "https://picsum.photos/seed/mqin7/701/48?grayscale"
+  },
+  {
+    "id": "7",
+    "title": "Elegant Gold Fish",
+    "description": "Subnecto astrum aequitas abundans quas.",
+    "videoUrl": "https://samplelib.com/lib/preview/mp4/sample-1mb.mp4",
+    "price": "473.60",
+    "previewUrl": "https://picsum.photos/seed/wAgZlxS/3908/139?blur=8"
+  },
+  {
+    "id": "8",
+    "title": "Generic Bronze Hat",
+    "description": "Enim antepono quidem trepide balbus.",
+    "videoUrl": "https://samplelib.com/lib/preview/mp4/sample-3mb.mp4",
+    "price": "416.55",
+    "previewUrl": "https://picsum.photos/seed/fQxfauo/1738/3720?grayscale&blur=2"
+  },
+  {
+    "id": "9",
+    "title": "Modern Concrete Tuna",
+    "description": "Consequuntur urbanus cotidie. Vestigium desipio maxime deripio strenuus...",
+    "videoUrl": "https://samplelib.com/lib/preview/mp4/sample-5mb.mp4",
+    "price": "440.19",
+    "previewUrl": "https://picsum.photos/seed/9UZwqJWm7a/3691/2008?grayscale&blur=4"
+  },
+  {
+    "id": "10",
+    "title": "Incredible Granite Cheese",
+    "description": "Neque aggero voluptates adflicto audacia accusamus...",
+    "videoUrl": "https://samplelib.com/lib/preview/mp4/sample-10mb.mp4",
+    "price": "362.45",
+    "previewUrl": "https://picsum.photos/seed/BpWXNqL/2686/3517?blur=5"
+  },
+
+  {
+    "id": "11",
+    "title": "Small Concrete Ball",
+    "description": "Vulticulus virtus enim amicitia. Suasoria aiunt victus. Amplexus auctus varius.",
+    "videoUrl": "https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4",
+    "price": "845.50",
+    "previewUrl": "https://picsum.photos/seed/gQDgm/2301/182?blur=1"
+  },
+  {
+    "id": "12",
+    "title": "Fantastic Cotton Salad",
+    "description": "Talus aveho varietas terebro tredecim corporis vapulus valde deputo.",
+    "videoUrl": "https://sample-videos.com/video321/mp4/360/big_buck_bunny_360p_1mb.mp4",
+    "price": "917.97",
+    "previewUrl": "https://picsum.photos/seed/3qtC0AtS7/1418/3657?blur=9"
+  },
+  {
+    "id": "13",
+    "title": "Rustic Rubber Soap",
+    "description": "Nam patrocinor uter volup arca aufero laudantium. Nostrum vulgus autem aiunt totidem custodia illum decerno ad. Deleo degenero abstergo damnatio alioqui voco comes aestus et validus.",
+    "videoUrl": "https://sample-videos.com/video321/mp4/480/big_buck_bunny_480p_1mb.mp4",
+    "price": "731.59",
+    "previewUrl": "https://picsum.photos/seed/b07Xs7Drr2/3458/1667?blur=6"
+  },
+  {
+    "id": "14",
+    "title": "Fresh Bronze Chips",
+    "description": "Vitae tracto adulatio tametsi caritas desino.",
+    "videoUrl": "https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4",
+    "price": "621.89",
+    "previewUrl": "https://picsum.photos/seed/jm3lqbO/1128/3581?blur=1"
+  },
+  {
+    "id": "15",
+    "title": "Tasty Rubber Shoes",
+    "description": "Cogito maiores aetas peccatus. Turba caterva adversus basium vinco vigilo ad audax taedium esse. Tertius templum pecus. Auditor denuo atrocitas convoco natus amet.",
+    "videoUrl": "https://sample-videos.com/video321/mp4/1080/big_buck_bunny_1080p_1mb.mp4",
+    "price": "916.90",
+    "previewUrl": "https://picsum.photos/seed/c0UTeEKQK/2405/2792?grayscale&blur=10"
+  },
+  {
+    "id": "16",
+    "title": "Frozen Silk Mouse",
+    "description": "Arca ultio arx delectus certe animadverto concido versus candidus. Suspendo trans velociter asporto.",
+    "videoUrl": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4",
+    "price": "921.79",
+    "previewUrl": "https://picsum.photos/seed/dE3mASROA/1637/640?grayscale&blur=4"
+  },
+  {
+    "id": "17",
+    "title": "Frozen Bamboo Shoes",
+    "description": "Vir dignissimos adduco comptus vere textor officia contego. Vulgus correptius contabesco valeo veniam unde.",
+    "videoUrl": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_1MB.mp4",
+    "price": "474.16",
+    "previewUrl": "https://picsum.photos/seed/v63j4opb/2202/3139?grayscale&blur=8"
+  },
+  {
+    "id": "18",
+    "title": "Generic Cotton Shirt",
+    "description": "Sonitus celo urbanus vicissitudo alveus tripudio articulus tam ocer. Xiphias sit catena arguo cena pariatur vinco cur conduco. Aiunt tolero aestas.",
+    "videoUrl": "https://sample-videos.com/video123/mp4/480/big_buck_bunny_480p_1mb.mp4",
+    "price": "72.19",
+    "previewUrl": "https://picsum.photos/seed/DLDb7B/2617/2468?grayscale&blur=3"
+  },
+  {
+    "id": "19",
+    "title": "Tasty Bronze Chair",
+    "description": "Amplexus subvenio cedo. Tenax voveo solitudo cunctatio subseco patruus ascisco facilis velociter. Deorsum vigor aegrotatio consectetur.",
+    "videoUrl": "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
+    "price": "328.19",
+    "previewUrl": "https://picsum.photos/seed/haHx9E4zIS/919/1863?blur=3"
+  },
+  {
+    "id": "20",
+    "title": "Licensed Silk Tuna",
+    "description": "Utique caveo deripio color acer curto labore. Benevolentia ocer curto explicabo deprecator caveo.",
+    "videoUrl": "https://sample-videos.com/video123/mp4/1080/big_buck_bunny_1080p_1mb.mp4",
+    "price": "336.97",
+    "previewUrl": "https://picsum.photos/seed/0cqGqqk/2798/940?blur=8"
+  }
+]

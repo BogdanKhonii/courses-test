@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { useAppDispatch, useAppSelector } from "./redux";
 import { selectUser } from "@/store/user/selector";
 import { clearMyUser, setUser } from "@/store/user/reducer";
+import { clearCourses } from "@/store/course/reducer";
 
 export const useAuth = (initUser?: boolean) => {
   const dispatch = useAppDispatch();
@@ -13,6 +14,7 @@ export const useAuth = (initUser?: boolean) => {
   const clearUser = () => {
     localStorage.removeItem("user");
     dispatch(clearMyUser());
+    dispatch(clearCourses());
     window.history.pushState({}, "", "/login");
     window.dispatchEvent(new PopStateEvent("popstate"));
   };

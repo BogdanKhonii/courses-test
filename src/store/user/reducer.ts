@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { SLICE_NAMES } from "../actionTypes";
+import type { UserState } from "./type";
 
 const initialState: UserState = {
   user: null,

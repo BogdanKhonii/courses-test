@@ -1,6 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { useAuth } from "@/hooks";
 import { useState } from "react";
+
+import { useAuth } from "@/hooks";
+
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [loading, setLoading] = useState(false);

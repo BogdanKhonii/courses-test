@@ -1,10 +1,12 @@
+import { useEffect, useMemo, useState } from "react";
+
+import { useAuth } from "@/hooks";
+import { validateEmail, validatePassword } from "@/shared/helpers";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useEffect, useMemo, useState } from "react";
-import { useAuth } from "@/hooks";
-import { validateEmail, validatePassword } from "@/shared/helpers";
 
 const Login = () => {
   const { login } = useAuth();
